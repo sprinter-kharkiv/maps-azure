@@ -9,5 +9,23 @@
 </head>
 <body>
   <app-root></app-root>
+  <script>
+    (function (doc) {
+      var scripts = doc.getElementsByTagName('script');
+      var body = doc.getElementsByTagName('body')
+      var script = scripts[scripts.length - 1];
+      var xhr = new XMLHttpRequest();
+      xhr.onload = function () {
+        var div = doc.createElement('div');
+        div.innerHTML = this.responseText;
+        div.style.overflow = 'hidden';
+        div.style.position = 'absolute';
+        div.style.left = '-9999px';
+        script.parentNode.insertBefore(div, script)
+      };
+      xhr.open('get', 'assets/sprites/sprite.svg', true);
+      xhr.send()
+    })(document)
+  </script>
 </body>
 </html>

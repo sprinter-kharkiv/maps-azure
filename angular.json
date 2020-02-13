@@ -28,9 +28,18 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/azure-maps-control/dist/atlas.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./",
+                "./src/assets/styles"
+              ]
+            },
+            "scripts": [
+              "node_modules/azure-maps-control/dist/atlas.min.js"
+            ]
           },
           "configurations": {
             "production": {
